@@ -2,6 +2,7 @@ export const typeDefs = `#graphql
   type Recipe {
     id: ID!
     title: String!
+    description: String!
     img: String!
     ingredients: [String!]!
     instructions: String!
@@ -17,6 +18,7 @@ export const typeDefs = `#graphql
     toggleFavorite(id: ID!): Recipe
     addRecipe(
       title: String!
+      description: String!
       img: String!
       ingredients: [String!]!
       instructions: String!
@@ -25,6 +27,7 @@ export const typeDefs = `#graphql
     editRecipe(
       id: ID!
       title: String
+      description: String!
       img: String
       ingredients: [String!]
       instructions: String
