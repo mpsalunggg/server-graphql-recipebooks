@@ -20,14 +20,25 @@ export const resolvers = {
       _: unknown,
       args: {
         title: string
+        description: string
         img: string
         ingredients: string[]
         instructions: string
       }
     ): Recipe => {
+      if (
+        !args.title ||
+        !args.description ||
+        !args.img ||
+        !args.ingredients.length ||
+        !args.instructions
+      ) {
+        throw new Error('All fields are required')
+      }
       const newRecipe: Recipe = {
         id: (recipes.length + 1).toString(),
         title: args.title,
+        description: args.description,
         img: args.img,
         ingredients: args.ingredients,
         instructions: args.instructions,
