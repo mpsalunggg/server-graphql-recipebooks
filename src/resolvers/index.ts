@@ -60,6 +60,7 @@ export const resolvers = {
       args: {
         id: string
         title?: string
+        description?: string
         img?: string
         ingredients?: string[]
         instructions?: string
@@ -70,6 +71,7 @@ export const resolvers = {
         throw new Error('Recipe not found')
       }
       if (args.title !== undefined) recipe.title = args.title
+      if (args.description !== undefined) recipe.description = args.description
       if (args.img !== undefined) recipe.img = args.img
       if (args.ingredients !== undefined) recipe.ingredients = args.ingredients
       if (args.instructions !== undefined)
